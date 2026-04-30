@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Weather Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="app-shell">
+    <header class="topbar glass-card">
+      <div>
+        <h1>Smart Weather Advisor</h1>
+        <p class="subhead">Live weather intelligence for better daily decisions</p>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="themeText">Dark</span> Mode
+      </button>
+    </header>
+
+    <section class="search-row glass-card">
+      <form id="searchForm" class="search-form">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Search city (e.g. London, Tokyo, Mumbai)"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+      <button id="useLocationBtn" class="geo-btn">Use My Location</button>
+    </section>
+
+    <main class="dashboard-grid">
+      <section class="glass-card current-card">
+        <div class="title-row">
+          <h2>Current Weather</h2>
+          <span id="locationName" class="pill">Loading...</span>
+        </div>
+        <div class="current-main">
+          <p id="currentTemp" class="temp-big">--°C</p>
+          <div>
+            <p id="currentCondition" class="condition-big">--</p>
+            <p id="currentTime" class="muted">--</p>
+          </div>
+        </div>
+        <div id="weatherSuggestion" class="suggestion-chip">Waiting for weather data...</div>
+      </section>
+
+      <section class="glass-card aqi-card">
+        <h2>Air Quality Index</h2>
+        <div class="aqi-main">
+          <p id="aqiLevel" class="aqi-level">--</p>
+          <p id="aqiValue" class="muted">AQI: --</p>
+        </div>
+        <p id="aqiSuggestion" class="suggestion-text">AQI insights will appear here.</p>
+      </section>
+
+      <section class="glass-card hourly-card">
+        <h2>Hourly Forecast</h2>
+        <div id="hourlyContainer" class="scroll-row"></div>
+      </section>
+
+      <section class="glass-card forecast-card">
+        <h2>5-Day Forecast</h2>
+        <div id="dailyContainer" class="daily-list"></div>
+      </section>
+
+      <section class="glass-card history-card">
+        <h2>Recent Searches</h2>
+        <div id="historyContainer" class="history-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
