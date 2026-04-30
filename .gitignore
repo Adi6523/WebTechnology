@@ -1,4 +1,7 @@
-node_modules/
+echo node_modules/ >> .gitignore
+echo dist/ >> .gitignore
+echo .angular/ >> .gitignore
+echo .vite/ >> .gitignorenode_modules/
 dist/
-.vite/
 .angular/
+.vite/
