@@ -1,0 +1,7 @@
+/* Component specific styles */
+.table th {
+  user-select: none;
+}
+.table th:hover {
+  color: var(--primary-color);
+}

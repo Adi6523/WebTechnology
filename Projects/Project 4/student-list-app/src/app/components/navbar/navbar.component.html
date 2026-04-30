@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-color);">
+  <div class="container-fluid px-4 py-2">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <i class="fas fa-graduation-cap text-primary me-2 fs-4"></i>
+      <span class="text-white">Edu<span class="text-primary">Manage</span></span>
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fas fa-chart-line me-1"></i> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/students" routerLinkActive="active">
+            <i class="fas fa-users me-1"></i> Students
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add" routerLinkActive="active">
+            <i class="fas fa-user-plus me-1"></i> Add Student
+          </a>
+        </li>
+      </ul>
+      
+      <div class="d-flex align-items-center">
+        <button class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center me-2" 
+                (click)="toggleTheme()" 
+                style="width: 40px; height: 40px; border-color: var(--border-color);">
+          <i class="fas" [ngClass]="isDarkMode ? 'fa-sun text-warning' : 'fa-moon text-primary'"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

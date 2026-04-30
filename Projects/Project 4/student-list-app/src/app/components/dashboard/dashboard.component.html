@@ -1,0 +1,57 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Dashboard Overview</h2>
+    <a routerLink="/add" class="btn btn-primary shadow-sm"><i class="fas fa-plus me-2"></i>New Student</a>
+  </div>
+
+  <div class="row g-4">
+    <!-- Total Students Card -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 bg-gradient-purple p-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <p class="mb-1 opacity-75">Total Students</p>
+              <h3 class="display-5 fw-bold mb-0 text-white">{{ totalStudents }}</h3>
+            </div>
+            <div class="fs-1 opacity-50"><i class="fas fa-users"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Average Marks Card -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <p class="text-muted mb-1">Average Marks</p>
+              <h3 class="display-5 fw-bold mb-0">{{ averageMarks }}<span class="fs-4 text-muted">%</span></h3>
+            </div>
+            <div class="fs-1 text-primary"><i class="fas fa-chart-pie"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Student Card -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3 border-primary" style="border-width: 2px;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <p class="text-muted mb-1">Top Performer</p>
+              <h4 class="fw-bold mb-0 text-primary">{{ topStudent ? topStudent.name : 'N/A' }}</h4>
+            </div>
+            <div class="fs-1 text-warning"><i class="fas fa-trophy"></i></div>
+          </div>
+          <div *ngIf="topStudent" class="d-flex align-items-center">
+            <span class="badge bg-primary me-2 fs-6">{{ topStudent.marks }}%</span>
+            <span class="text-muted small">{{ topStudent.course }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

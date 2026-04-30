@@ -1,0 +1,7 @@
+/* Component specific styles */
+.input-group-text {
+  color: var(--text-muted);
+}
+.is-invalid + .text-danger {
+  font-weight: 500;
+}

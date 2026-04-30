@@ -1,0 +1,17 @@
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 0 0.25rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #fff !important;
+  background-color: rgba(139, 92, 246, 0.15); /* light purple tint */
+}
+
+.nav-link.active i {
+  color: var(--primary-color);
+}

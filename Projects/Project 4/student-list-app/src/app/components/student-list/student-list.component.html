@@ -1,0 +1,76 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Student Directory</h2>
+    <a routerLink="/add" class="btn btn-primary"><i class="fas fa-plus me-2"></i>Add Student</a>
+  </div>
+
+  <div class="card border-0 mb-4">
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-6 search-wrapper">
+          <i class="fas fa-search"></i>
+          <input type="text" 
+                 class="form-control bg-transparent" 
+                 placeholder="Search by name or course..." 
+                 [value]="searchTerm"
+                 (input)="onSearchChange($event)">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th scope="col" style="cursor: pointer;" (click)="sortBy('name')">
+                Name 
+                <i class="fas fa-sort ms-1" [ngClass]="{'text-primary': sortColumn === 'name'}"></i>
+              </th>
+              <th scope="col">Age</th>
+              <th scope="col">Course</th>
+              <th scope="col" style="cursor: pointer;" (click)="sortBy('marks')">
+                Marks 
+                <i class="fas fa-sort ms-1" [ngClass]="{'text-primary': sortColumn === 'marks'}"></i>
+              </th>
+              <th scope="col" class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of filteredStudents">
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="avatar bg-gradient-purple text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; font-weight: bold;">
+                    {{ student.name.charAt(0).toUpperCase() }}
+                  </div>
+                  <div>
+                    <div class="fw-bold">{{ student.name }}</div>
+                  </div>
+                </div>
+              </td>
+              <td>{{ student.age }}</td>
+              <td><span class="badge bg-secondary bg-opacity-25 text-body rounded-pill">{{ student.course }}</span></td>
+              <td>
+                <span class="fw-bold" [ngClass]="student.marks >= 80 ? 'text-success' : (student.marks >= 50 ? 'text-warning' : 'text-danger')">
+                  {{ student.marks }}%
+                </span>
+              </td>
+              <td class="text-end">
+                <a [routerLink]="['/edit', student.id]" class="btn btn-sm btn-outline-primary me-2" title="Edit">
+                  <i class="fas fa-pen"></i>
+                </a>
+                <button (click)="deleteStudent(student.id, student.name)" class="btn btn-sm btn-outline-danger" title="Delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="filteredStudents.length === 0">
+              <td colspan="5" class="text-center py-5 text-muted">
+                <i class="fas fa-folder-open fs-1 mb-3 d-block opacity-50"></i>
+                No students found.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
