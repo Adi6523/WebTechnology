@@ -1,0 +1,21 @@
+<h2>Add Student</h2>
+
+<div class="form-group">
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="newStudent.name" placeholder="Enter student name">
+</div>
+
+<div class="form-group">
+  <label for="course">Course:</label>
+  <input type="text" id="course" [(ngModel)]="newStudent.course" placeholder="Enter course name">
+</div>
+
+<button (click)="addStudent()">Add Student</button>
+
+<hr style="margin: 30px 0;">
+
+<div class="live-preview" *ngIf="newStudent.name || newStudent.course">
+  <h3>Live Preview:</h3>
+  <p><strong>Name:</strong> {{ newStudent.name }}</p>
+  <p><strong>Course:</strong> {{ newStudent.course }}</p>
+</div>

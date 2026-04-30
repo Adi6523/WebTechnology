@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Live Input Preview</h1>
+
+<input
+type="text"
+[(ngModel)]="text"
+placeholder="Type something...">
+
+<h2>Live Preview:</h2>
+<p>{{text}}</p>
+
+<h3>Character Count: {{text.length }}</h3>
+
+</div>

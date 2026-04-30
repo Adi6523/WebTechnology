@@ -1,0 +1,39 @@
+<div class="container">
+
+<h1>Angular Directives Example</h1>
+
+<!-- ngIf -->
+<button (click)="showDiv=!showDiv">
+Toggle Div
+</button>
+
+<div *ngIf="showDiv" class="box">
+This Div is shown using *ngIf
+</div>
+
+
+<h2>Colors using *ngFor</h2>
+<ul>
+<li *ngFor="let color of colors">
+{{color}}
+</li>
+</ul>
+
+
+<h2>ngStyle Example</h2>
+<div
+[ngStyle]="{
+'background-color':'lightblue',
+'padding':'20px'
+}">
+Styled using ngStyle
+</div>
+
+
+<h2>ngClass Example</h2>
+<div
+[ngClass]="{'highlight':isHighlight}">
+Styled using ngClass
+</div>
+
+</div>

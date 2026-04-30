@@ -1,0 +1,44 @@
+<h2>Students List</h2>
+
+<div *ngIf="students.length === 0; else studentList">
+  <p>No students available</p>
+</div>
+
+<ng-template #studentList>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Course</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.name }}</td>
+        <td>{{ student.course }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<hr style="margin: 30px 0;">
+
+<h2>API Users</h2>
+<button (click)="loadUsers()" [disabled]="loadingUsers">Load Users</button>
+
+<p *ngIf="loadingUsers">Loading users...</p>
+
+<table *ngIf="apiUsers.length > 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of apiUsers">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>
