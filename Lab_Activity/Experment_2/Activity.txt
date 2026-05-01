@@ -1,0 +1,18 @@
+Activtys:
+1)declare A array,object,String and function
+
+2)point Largest number in array
+
+3)find reverse No. in String
+
+4)check Palindrome  in string
+
+5)write a code for fibbonacci series
+
+6)count vowels in String 
+
+7)remove duplicate No. from array
+
+8)funtion to find even or odd 
+
+9)code for Sum of Array

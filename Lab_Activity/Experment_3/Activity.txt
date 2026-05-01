@@ -1,0 +1,21 @@
+Activty 3
+
+1) differnce btw arrow function and simple function
+
+2) this keyword why we use this keyword in (arrow,simple)both function,why do we use this keyword,if not why 
+
+3) write a code for arrow funtion with 2 Example
+
+4) write a code for switch case 
+
+5) how to use Truthy and Falsy value with example
+
+6) how to use ternary operator with example
+
+7) write a code for how to use loop  (for,while,do while,for in,for of)
+
+8) differnce btw for in and for of loop with example
+
+9) how to use filter,map fuction in javascript with example
+
+10) how to use reduce function in javascript with example
