@@ -9,7 +9,7 @@ styleUrl:'./student-profile.css'
 
 export class StudentProfileComponent{
 
-studentName='Divya';
+studentName='Aditya';
 
 course='AIML';
 
